@@ -1,0 +1,8 @@
+from azureml import Workspace
+ws = Workspace(
+    workspace_id='*********************',
+    authorization_token='*********************************',
+    endpoint='https://studioapi.azureml.net'
+)
+ds = ws.datasets['Flood Prediction.csv']
+frame = ds.to_dataframe()
