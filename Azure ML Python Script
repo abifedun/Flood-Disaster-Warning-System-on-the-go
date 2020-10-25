@@ -1,0 +1,13 @@
+from azureml import Workspace
+ws = Workspace(
+    workspace_id='*******************************',
+    authorization_token='*****************************************************',
+    endpoint='https://studioapi.azureml.net'
+)
+experiment = ws.experiments['******************************************************************']
+ds = experiment.get_intermediate_dataset(
+    node_id='********************************',
+    port_name='Results dataset',
+    data_type_id='GenericCSV'
+)
+frame = ds.to_dataframe()
